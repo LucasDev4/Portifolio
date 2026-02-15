@@ -1,0 +1,996 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*   font-family: "IBM Plex Sans Devanagari", sans-serif; */
+
+/*   font-family: "Montserrat", sans-serif; */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#smooth-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#smooth-content {
+    min-height: 100vh;
+}
+
+header {
+    background: radial-gradient(ellipse at 50% 100%,
+            #ff8a2a 0%,
+            #e94a1f 25%,
+            #b7341c 50%,
+            #3f130b 75%,
+            #000000 100%);
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px repeat(5, 1fr);
+    font-family: "IBM Plex Sans Devanagari", sans-serif;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, #1b0805);
+    pointer-events: none;
+}
+
+#LucasHero,
+.textHero,
+.enter1,
+.enter2,
+.navHeader {
+    will-change: transform;
+}
+
+
+.navHeader {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    font-family: "IBM Plex Sans Devanagari", sans-serif;
+    font-weight: bold;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.navHeader a {
+    font-size: 24px;
+    color: #F2F2F2;
+    text-decoration: none;
+    position: relative;
+    transition: 0.4s ease;
+    padding-bottom: 5px;
+}
+
+.navHeader a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #e94a1f;
+    transition: width 0.4s ease;
+}
+
+.navHeader a:hover {
+    transform: translateY(-5px);
+}
+
+.navHeader a:hover::after {
+    width: 100%;
+}
+
+.navHeader button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 170px;
+    height: 60px;
+    color: #141414;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #F2F2F2;
+    border-radius: 50px;
+    border: none;
+    font-size: 24px;
+    overflow: hidden;
+}
+
+.navHeader button img {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    background-color: #FF5A1F;
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+
+.navHeader button:hover img {
+    transform: translateX(5px);
+}
+
+
+#LucasHero {
+    grid-column: 6/8;
+    grid-row: 5;
+    width: 550px;
+    height: 820px;
+    transform: translateY(6px);
+    overflow: hidden;
+}
+
+.textHero {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    color: #f2f2f293;
+}
+
+.textHero h1 {
+    font-size: clamp(80px, 12vw, 190px);
+    margin: 0;
+}
+
+.textHero h2 {
+    font-size: clamp(30px, 3vw, 50px);
+    margin: 0;
+}
+
+.enter1 {
+    background-color: rgba(207, 207, 207, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    opacity: 0.60;
+    color: #F2F2F2;
+    font-size: 22px;
+    width: 480px;
+    height: 530px;
+    transition: opacity o.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.enter1 h4 {
+    width: 300px;
+    font-size: 25px;
+    padding: 20px;
+}
+
+.enter2 {
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    width: 500px;
+    height: 530px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.juntos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.juntos p {
+    width: 120px;
+}
+
+.enter2 img {
+    width: 40px;
+    height: 40px;
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: float 2s ease-in-out infinite;
+}
+
+.scrollIndicator span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: white;
+    opacity: 0.7;
+}
+
+.mouse {
+    width: 22px;
+    height: 36px;
+    border: 2px solid white;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+}
+
+.wheel {
+    width: 3px;
+    height: 6px;
+    background: white;
+    border-radius: 3px;
+    animation: scrollWheel 1.5s infinite;
+}
+
+@keyframes scrollWheel {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, -6px);
+    }
+}
+
+.scrollIndicator.hide {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+    pointer-events: none;
+}
+
+
+.aboutMe {
+    background: radial-gradient(ellipse at 35% 45%,
+            #ff8a2a 0%,
+            #e94a1f 30%,
+            #b7341c 55%,
+            #3f130b 75%,
+            #000000 100%);
+    box-shadow: inset -140px 0 200px rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    overflow: hidden;
+    flex-direction: column;
+    font-family: "IBM Plex Sans Devanagari", sans-serif;
+}
+
+.titleAbout {
+    margin-left: 200px;
+}
+
+.titleAbout h2 {
+    font-size: 100px;
+    color: #F2F2F2;
+    text-shadow: 0 2px 4px #141414;
+}
+
+.titleAbout strong {
+    color: #E13A1F;
+}
+
+.containerAbout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cardAbout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 250px;
+    height: 600px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #F2F2F2;
+    background-color: #9B9B9B;
+    opacity: 0.5;
+    padding: 20px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cardAbout:hover {
+    opacity: 0.8;
+    transition: opacity 0.4s ease;
+}
+
+.cardAbout img {
+    width: 50px;
+    height: 50px;
+}
+
+.one {
+    position: relative;
+    top: -130px;
+    padding-top: 20px;
+}
+
+.two {
+    position: relative;
+    top: -70px;
+    background-color: #141414;
+    opacity: 0.6;
+    padding-top: 70px;
+}
+
+.three {
+    position: relative;
+    top: -20px;
+    padding-top: 60px;
+}
+
+.how {
+    background: radial-gradient(ellipse at 45% 35%,
+            #ff8a2a 0%,
+            #e94a1f 30%,
+            #b7341c 55%,
+            #3f130b 75%,
+            #000000 100%);
+    height: 100vh;
+    box-shadow: inset -140px 0 200px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-direction: column;
+    font-family: "IBM Plex Sans Devanagari", sans-serif;
+}
+
+.titleHow {
+    color: #F2F2F2;
+    text-align: center;
+}
+
+.titleHow h2 {
+    font-size: 80px;
+    opacity: 0.80;
+    text-shadow: 0 2px 4px #141414;
+}
+
+.titleHow h4 {
+    font-size: 40px;
+    opacity: 0.60;
+    filter: blur(1px);
+}
+
+.containerHow {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    align-items: center;
+    gap: 40px;
+}
+
+.cardHow {
+    width: 550px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(217, 217, 217, 0.5);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-weight: bold;
+    color: #F2F2F2;
+    border-left: 0px solid transparent;
+    transition: opacity 0.2s ease;
+    transition: border-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardHow:hover {
+    border-left: 5px solid #FF5A1F;
+}
+
+.cardHow:hover img,
+p {
+    opacity: 1;
+}
+
+.cardHow img {
+    width: 60px;
+    height: 60px;
+    opacity: 0.6;
+    transition: 0.4s ease;
+}
+
+.cardHow p {
+    opacity: 0.6;
+    width: 80%;
+    transition: 0.4s ease;
+}
+
+.project {
+    background: radial-gradient(ellipse at 45% 35%, #ff8a2a 0%, #e94a1f 30%, #b7341c 55%, #3f130b 75%, #000000 100%);
+    box-shadow: inset -140px 7px 200px rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+}
+
+.cardProject {
+    width: 510px;
+    height: 290px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    opacity: 0.5;
+    filter: blur(3px);
+    position: relative;
+}
+
+.cardProject .projetoImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+
+.cardProject:hover {
+    transition: opacity 0.3s ease, filter 0.3s ease;
+    opacity: 1 !important;
+    filter: blur(0);
+}
+
+.cardProject .end {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: column;
+    font-family: "IBM Plex Sans Devanagari", sans-serif;
+    transition: 0.5s ease;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.cardProject:hover .end {
+    opacity: 1;
+    backdrop-filter: blur(5px);
+}
+
+.cardProject .first:hover {
+    backdrop-filter: blur(0);
+}
+
+.cardProject .end a {
+    width: 350px;
+    height: 50px;
+    border-radius: 50px;
+    border: 3px solid #141414;
+    background-color: transparent;
+    font-size: 24px;
+    color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    transition: 0.5s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.end a:hover {
+    border: 3px solid #F2F2F2;
+    background-color: #F2F2F2;
+    color: black;
+}
+
+.end a img {
+    width: 30px;
+    height: 30px;
+}
+
+.cardProject .end h2 {
+    font-size: 28px;
+    color: #F2F2F2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.first {
+    position: relative;
+    top: -150px;
+    opacity: 1 !important;
+    filter: blur(0) !important;
+    z-index: 10;
+    transform: scale(1.1);
+}
+
+#arrow,
+#arrow2 {
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#arrow {
+    rotate: 180deg;
+}
+
+#arrow2 {
+    rotate: 0deg;
+}
+
+#arrow:hover,
+#arrow2:hover {
+    transition: 0.3s ease;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: rgb(12, 12, 12);
+    font-family: "IBM Plex Sans Devanagari", sans-serif;
+    overflow: hidden;
+}
+
+.carrosel-container {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 120px;
+    padding-bottom: 50px;
+    position: relative;
+    display: flex;
+}
+
+.carrosel-track {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    min-width: 80px;
+}
+
+.bg img {
+    background-color: rgba(207, 207, 207, 0.7);
+    padding: 5px;
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+    transition: 0.5s ease;
+}
+
+.nameTools {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    order: 1;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba(207, 207, 207, 0.7);
+    white-space: nowrap;
+}
+
+.nameTools p {
+    color: white;
+    font-size: 16px;
+    font-family: "IBM Plex Sans Devanagari", sans-serif;
+    font-weight: 800;
+    margin: 0;
+}
+
+.bg:hover img {
+    transform: scale(1.1);
+}
+
+.bg:hover .nameTools {
+    opacity: 1;
+}
+
+.foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.double {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    margin-top: 90px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.double h2 {
+    color: white;
+    width: 400px;
+    font-size: 25px;
+    text-align: left;
+}
+
+.dog {
+    text-align: center;
+    color: #F2F2F2;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.dog img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(255, 90, 31, 0.3);
+}
+
+.contact {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.contact img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.contact img:hover {
+    transform: translateY(-5px);
+}
+
+.name {
+    font-size: 140px;
+    background-clip: inherit;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    background-image: linear-gradient(to right, #FF5A1F, #e94a1f, #3f130b, #1b1b1b);
+    margin-top: 50px;
+    font-weight: 900;
+    white-space: nowrap;
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 1024px) {
+
+    #smooth-wrapper {
+        position: relative;
+        height: auto;
+        overflow: visible;
+    }
+    
+    #smooth-content {
+        overflow: hidden;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
+
+
+    .navHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        position: relative;
+    }
+
+    .navHeader a {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 99;
+        order: 2;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #F2F2F2;
+        border-radius: 3px;
+    }
+
+    .navHeader button {
+        order: 1;
+        width: 140px; 
+        font-size: 18px;
+        height: 50px;
+    }
+
+    .enter1, .enter2 {
+        display: none; 
+    }
+    #LucasHero {
+        grid-column: unset;
+        grid-row: unset;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        transform: none !important;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        z-index: 1;
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%); /* Suaviza corte inferior */
+    }
+    .textHero {
+        position: relative;
+        transform: none !important;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: -80px;
+        z-index: 10;
+        padding: 0 20px;
+    }
+
+    .textHero h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .textHero h1 {
+        font-size: 60px;
+        line-height: 1;
+    }
+    
+    .aboutMe {
+        height: auto;
+        padding: 50px 20px;
+        box-shadow: none;
+    }
+
+    .titleAbout {
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .titleAbout h2 {
+        font-size: 50px;
+    }
+
+    .containerAbout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cardAbout {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 250px;
+        position: static;
+        top: auto;
+        padding: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        opacity: 1;
+    }
+    
+    .cardAbout.two { background-color: rgba(20, 20, 20, 0.6); } /* Mantém o do meio escuro */
+
+    .cardAbout h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .how {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .titleHow h2 {
+        font-size: 50px;
+    }
+    
+    .titleHow h4 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .containerHow {
+        gap: 15px;
+    }
+
+    .cardHow {
+        width: 100%;
+        height: auto;
+        min-height: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        justify-content: flex-start;
+        text-align: left;
+        border-left: none;
+    }
+    
+    .cardHow img {
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+    }
+    
+    .cardHow p {
+        font-size: 14px;
+        opacity: 1;
+        width: auto;
+    }
+
+    .project {
+        height: auto;
+        flex-direction: column;
+        padding: 50px 20px;
+        background: #000;
+    }
+
+    #arrow, #arrow2 {
+        display: none;
+    }
+
+    .cardProject {
+        width: 100%;
+        height: 250px;
+        opacity: 1 !important;
+        filter: blur(0) !important;
+        margin-bottom: 20px;
+    }
+
+    .first {
+        top: auto;
+        transform: none;
+    }
+    
+    .cardProject .end {
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+    }
+    
+    .cardProject:active .end, .cardProject:focus .end {
+        opacity: 1;
+    }
+
+    .carrosel-container {
+        padding-top: 50px;
+    }
+
+    .double {
+        flex-direction: column;
+        margin-top: 30px;
+        gap: 40px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .double h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .name {
+        font-size: 40px;
+        margin-top: 30px;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.2;
+    }
+}
