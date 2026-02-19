@@ -12,12 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
     willChange: "transform, opacity" 
   });
 
+const mm = gsap.matchMedia();
+
+mm.add("(min-width: 1025px)", () => {
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "header",
       start: "top top",
-      end: "+=1000",
-      scrub: 1.2,
+      end: "+=800",
+      scrub: 1.3,
       pin: true,
       anticipatePin: 1
     }
@@ -31,8 +35,32 @@ document.addEventListener("DOMContentLoaded", () => {
     .from(".enter2", { x: 300, opacity: 0, duration: 2 }, 0.4)
     .to("#LucasHero", { scale: 1, duration: 4 }, 1)
     .to(".textHero", { y: -500, duration: 4 }, 1)
-    .to(".enter1", { y: -300, duration: 4 }, 1)
+    .to(".enter1", { y: -300, duration: 4 }, 1) // desktop sobe
     .to(".enter2", { y: -350, duration: 4 }, 1);
+
+});
+
+mm.add("(max-width: 1024px)", () => {
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "header",
+      start: "top top",
+      end: "+=800",
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1
+    }
+  });
+
+  tl.from(".navHeader", { y: -100, opacity: 0, duration: 1 })
+    .from("#LucasHero", { scale: 1.2, y: 80, opacity: 0, duration: 1.5 }, 0)
+    .from(".textHero h1", { x: 200, opacity: 0, duration: 1.5 }, 0.2)
+    .from(".textHero h2", { x: -200, opacity: 0, duration: 1.5 }, 0.2)
+    .from(".enter1", { x: -150, opacity: 0, duration: 1.5 }, 0.4)
+    .from(".enter2", { x: 150, opacity: 0, duration: 1.5 }, 0.4);
+
+});
 
   ScrollTrigger.create({
     start: "top -50",
@@ -60,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top top",
       end: "+=1000",
       pin: true,
-      scrub: 1,
+      scrub: 1.3,
     }
   })
   .from(".cardHow", {

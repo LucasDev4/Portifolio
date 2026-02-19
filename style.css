@@ -17,6 +17,9 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
+body{
+    background-color: #000;
+}
 
 #smooth-wrapper {
     position: fixed;
@@ -61,83 +64,9 @@ header::after {
 #LucasHero,
 .textHero,
 .enter1,
-.enter2,
-.navHeader {
+.enter2 {
     will-change: transform;
 }
-
-
-.navHeader {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    font-family: "IBM Plex Sans Devanagari", sans-serif;
-    font-weight: bold;
-    z-index: 5;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.navHeader a {
-    font-size: 24px;
-    color: #F2F2F2;
-    text-decoration: none;
-    position: relative;
-    transition: 0.4s ease;
-    padding-bottom: 5px;
-}
-
-.navHeader a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background-color: #e94a1f;
-    transition: width 0.4s ease;
-}
-
-.navHeader a:hover {
-    transform: translateY(-5px);
-}
-
-.navHeader a:hover::after {
-    width: 100%;
-}
-
-.navHeader button {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 170px;
-    height: 60px;
-    color: #141414;
-    font-weight: bold;
-    padding: 10px;
-    background-color: #F2F2F2;
-    border-radius: 50px;
-    border: none;
-    font-size: 24px;
-    overflow: hidden;
-}
-
-.navHeader button img {
-    width: 35px;
-    height: 35px;
-    padding: 5px;
-    background-color: #FF5A1F;
-    border-radius: 50%;
-    transition: 0.5s ease;
-}
-
-.navHeader button:hover img {
-    transform: translateX(5px);
-}
-
 
 #LucasHero {
     grid-column: 6/8;
@@ -538,7 +467,7 @@ p {
 }
 
 .cardProject .end a {
-    width: 350px;
+    width: 70%;
     height: 50px;
     border-radius: 50px;
     border: 3px solid #141414;
@@ -765,7 +694,7 @@ footer {
         height: auto;
         overflow: visible;
     }
-    
+
     #smooth-content {
         overflow: hidden;
     }
@@ -776,49 +705,37 @@ footer {
         height: auto;
         min-height: 100vh;
         padding-bottom: 50px;
-    }
-
-
-    .navHeader {
-        display: flex;
-        justify-content: space-between;
         align-items: center;
-        width: 100%;
-        padding: 20px;
-        position: relative;
     }
-
-    .navHeader a {
+    .enter2 {
         display: none;
     }
 
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        z-index: 99;
+    .enter1 {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        margin: 20px auto 0 auto;
+        font-size: 16px;
+        z-index: 5;
+    }
+
+    .textHero {
         order: 2;
     }
 
-    .menu-toggle span {
-        display: block;
-        width: 30px;
-        height: 3px;
-        background-color: #F2F2F2;
-        border-radius: 3px;
+    .enter1 {
+        order: 3;
     }
 
-    .navHeader button {
+    #LucasHero {
         order: 1;
-        width: 140px; 
-        font-size: 18px;
-        height: 50px;
     }
 
-    .enter1, .enter2 {
-        display: none; 
-    }
+
     #LucasHero {
         grid-column: unset;
         grid-row: unset;
@@ -830,8 +747,10 @@ footer {
         display: block;
         position: relative;
         z-index: 1;
-        mask-image: linear-gradient(to bottom, black 80%, transparent 100%); /* Suaviza corte inferior */
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        /* Suaviza corte inferior */
     }
+
     .textHero {
         position: relative;
         transform: none !important;
@@ -852,7 +771,7 @@ footer {
         font-size: 60px;
         line-height: 1;
     }
-    
+
     .aboutMe {
         height: auto;
         padding: 50px 20px;
@@ -886,8 +805,12 @@ footer {
         backdrop-filter: blur(10px);
         opacity: 1;
     }
-    
-    .cardAbout.two { background-color: rgba(20, 20, 20, 0.6); } /* Mantém o do meio escuro */
+
+    .cardAbout.two {
+        background-color: rgba(20, 20, 20, 0.6);
+    }
+
+    /* Mantém o do meio escuro */
 
     .cardAbout h2 {
         font-size: 16px;
@@ -902,7 +825,7 @@ footer {
     .titleHow h2 {
         font-size: 50px;
     }
-    
+
     .titleHow h4 {
         font-size: 20px;
         margin-bottom: 30px;
@@ -922,13 +845,13 @@ footer {
         text-align: left;
         border-left: none;
     }
-    
+
     .cardHow img {
         width: 40px;
         height: 40px;
         opacity: 1;
     }
-    
+
     .cardHow p {
         font-size: 14px;
         opacity: 1;
@@ -942,7 +865,8 @@ footer {
         background: #000;
     }
 
-    #arrow, #arrow2 {
+    #arrow,
+    #arrow2 {
         display: none;
     }
 
@@ -958,13 +882,28 @@ footer {
         top: auto;
         transform: none;
     }
-    
+
     .cardProject .end {
         background: rgba(0, 0, 0, 0.6);
         opacity: 0;
     }
-    
-    .cardProject:active .end, .cardProject:focus .end {
+
+    .cardProject .end a {
+        font-size: 18px;
+        height: 40px;
+    }
+
+    .end a img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .cardProject .end h2 {
+        font-size: 24px;
+    }
+
+    .cardProject:active .end,
+    .cardProject:focus .end {
         opacity: 1;
     }
 
