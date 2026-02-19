@@ -17,7 +17,8 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
-body{
+
+body {
     background-color: #000;
 }
 
@@ -48,6 +49,61 @@ header {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 100px repeat(5, 1fr);
     font-family: "IBM Plex Sans Devanagari", sans-serif;
+}
+
+.topHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    padding: 20px;
+}
+
+.logo {
+    background-color: #f2f2f250;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topHeader .logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.topHeader button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    color: #141414;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #F2F2F2;
+    border-radius: 50px;
+    border: none;
+    font-size: 22px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.topHeader button img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-color: #FF5A1F;
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+
+.topHeader button:hover img {
+    transform: translateX(5px);
 }
 
 header::after {
@@ -84,7 +140,7 @@ header::after {
     transform: translateX(-50%);
     text-align: center;
     z-index: 10;
-    color: #f2f2f293;
+    color: #f2f2f279;
 }
 
 .textHero h1 {
@@ -658,6 +714,7 @@ footer {
 .contact {
     display: flex;
     gap: 20px;
+    justify-content: center;
     align-items: center;
 }
 
@@ -707,6 +764,23 @@ footer {
         padding-bottom: 50px;
         align-items: center;
     }
+
+    .topHeader button {
+        width: 120px;
+        font-size: 16px;
+        height: 40px;
+    }
+    .topHeader button img{
+        width: 25px;
+        height: 25px;
+    }
+    .topHeader .logo{
+        height: 40px;
+    }
+    .topHeader .logo img{
+        width: 60px;
+        height: 60px;
+    }
     .enter2 {
         display: none;
     }
@@ -748,7 +822,6 @@ footer {
         position: relative;
         z-index: 1;
         mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-        /* Suaviza corte inferior */
     }
 
     .textHero {
@@ -809,8 +882,6 @@ footer {
     .cardAbout.two {
         background-color: rgba(20, 20, 20, 0.6);
     }
-
-    /* Mantém o do meio escuro */
 
     .cardAbout h2 {
         font-size: 16px;
@@ -931,5 +1002,9 @@ footer {
         white-space: normal;
         text-align: center;
         line-height: 1.2;
+    }
+
+    .contact {
+        margin-right: 20%;
     }
 }

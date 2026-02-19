@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     effects: true
   });
 
-  gsap.set(".navHeader, #LucasHero, .cardAbout, .cardHow, .cardProject, .name", { 
+  gsap.set(".topHeader, #LucasHero, .cardAbout, .cardHow, .cardProject, .name", { 
     willChange: "transform, opacity" 
   });
 
@@ -27,7 +27,7 @@ mm.add("(min-width: 1025px)", () => {
     }
   });
 
-  tl.from(".navHeader", { y: -100, opacity: 0, duration: 1 })
+  tl.from(".topHeader", { y: -100, opacity: 0, duration: 1 })
     .from("#LucasHero", { scale: 1.4, y: 100, opacity: 0, duration: 2, ease: "power3.out" }, 0)
     .from(".textHero h1", { x: 400, opacity: 0, duration: 2 }, 0.2)
     .from(".textHero h2", { x: -400, opacity: 0, duration: 2 }, 0.2)
@@ -35,7 +35,7 @@ mm.add("(min-width: 1025px)", () => {
     .from(".enter2", { x: 300, opacity: 0, duration: 2 }, 0.4)
     .to("#LucasHero", { scale: 1, duration: 4 }, 1)
     .to(".textHero", { y: -500, duration: 4 }, 1)
-    .to(".enter1", { y: -300, duration: 4 }, 1) // desktop sobe
+    .to(".enter1", { y: -300, duration: 4 }, 1)
     .to(".enter2", { y: -350, duration: 4 }, 1);
 
 });
@@ -53,7 +53,7 @@ mm.add("(max-width: 1024px)", () => {
     }
   });
 
-  tl.from(".navHeader", { y: -100, opacity: 0, duration: 1 })
+  tl.from(".topHeader", { y: -100, opacity: 0, duration: 1 })
     .from("#LucasHero", { scale: 1.2, y: 80, opacity: 0, duration: 1.5 }, 0)
     .from(".textHero h1", { x: 200, opacity: 0, duration: 1.5 }, 0.2)
     .from(".textHero h2", { x: -200, opacity: 0, duration: 1.5 }, 0.2)
