@@ -557,6 +557,7 @@ p {
     font-size: 28px;
     color: #F2F2F2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
 }
 
 .first {
@@ -770,17 +771,21 @@ footer {
         font-size: 16px;
         height: 40px;
     }
-    .topHeader button img{
+
+    .topHeader button img {
         width: 25px;
         height: 25px;
     }
-    .topHeader .logo{
+
+    .topHeader .logo {
         height: 40px;
     }
-    .topHeader .logo img{
+
+    .topHeader .logo img {
         width: 60px;
         height: 60px;
     }
+
     .enter2 {
         display: none;
     }
@@ -1006,5 +1011,171 @@ footer {
 
     .contact {
         margin-right: 20%;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .textHero h1 {
+        font-size: clamp(60px, 10vw, 150px);
+    }
+
+    .enter1,
+    .enter2 {
+        transform: scale(0.85);
+    }
+
+    .cardAbout {
+        width: 220px;
+    }
+
+    .one,
+    .two,
+    .three {
+        top: 0;
+        margin-top: 0;
+    }
+
+    .cardProject .end h2 {
+        font-size: 20px;
+    }
+
+    .aboutMe {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 100px 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    header {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 80px;
+    }
+
+    .enter1 {
+        width: 90%;
+        max-width: 480px;
+        left: 50%;
+        transform: translateX(-50%) !important;
+        margin-top: 20px;
+    }
+
+    .aboutMe {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    .containerAbout {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cardProject .end h2 {
+        font-size: 18px;
+    }
+
+    .cardAbout {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        min-height: 300px;
+        margin-bottom: 20px;
+        top: 0 !important;
+        left: 0 !important;
+    }
+    .cardHow {
+        width: 90%;
+        max-width: 550px;
+        height: auto;
+        min-height: 120px;
+    }
+
+    .project {
+        height: auto;
+        padding: 80px 0;
+    }
+
+    .cardProject {
+        width: 90%;
+        max-width: 510px;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .double {
+        flex-direction: column-reverse;
+        gap: 30px;
+        width: 90%;
+        margin: 50px auto;
+    }
+
+    .double h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .contact {
+        flex-wrap: wrap;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .topHeader {
+        padding: 10px;
+    }
+
+    .topHeader button {
+        width: 110px;
+        font-size: 14px;
+    }
+
+    .textHero h1 {
+        font-size: 15vw;
+    }
+
+    .textHero h2 {
+        font-size: 6vw;
+    }
+
+    .enter1 {
+        padding: 15px;
+    }
+
+    .enter1 h4 {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .titleAbout h2,
+    .titleHow h2 {
+        font-size: 40px;
+    }
+
+    .cardHow {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+        gap: 15px;
+    }
+
+    .cardHow:hover {
+        border-left: 0;
+        border-top: 5px solid #FF5A1F;
+    }
+
+    .name {
+        font-size: 18vw;
     }
 }
